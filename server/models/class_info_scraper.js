@@ -30,7 +30,9 @@ var nightmare = new Nightmare();
     ()=>
       {
         const classes = document.querySelectorAll('#_4_1termCourses_noterm ul.coursefakeclass a');
+         console.log(classes);
         const studentName = document.querySelector("#global-nav-link").innerHTML.match(/\>(.*)\<span id=/).pop();
+         console.log(studentName);
         var arr = [];
         for(var i=0; i< classes.length; i++){
           if(classes[i].href.match(/\id=(.*)\&url/)){
@@ -40,6 +42,7 @@ var nightmare = new Nightmare();
           }
         }
         return arr;
+        console.log(arr);
       }
 )
   .then((links)=> {
