@@ -1,7 +1,7 @@
 "use strict";
 var Nightmare = require('nightmare');
 var nightmare = new Nightmare();
-var async = require("async");
+
 
  class ClassInfoScraper{
   constructor(userName, passWord){
