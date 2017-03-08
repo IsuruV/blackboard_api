@@ -1,10 +1,13 @@
+// require('babel/register')({optional: ['es7']});
+
+
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 
 import routes from './routes';
 
-mongoose.connect('mongodb://localhost:27017/devcoffee', () => {
+mongoose.connect(process.env.IP, () => {
   console.log('Contected to mongodb...');
 });
 

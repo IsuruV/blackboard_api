@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../server/models/index.js"],"names":["User"],"mappings":";;;;;;AAAA;;;;;;kBAEe;AACbA;AADa,C","file":"index.js","sourcesContent":["import User from './User';\n\nexport default {\n  User,\n};\n"]}
