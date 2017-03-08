@@ -5,19 +5,17 @@ const { Schema } = mongoose;
 mongoose.Promise = global.Promise;
 
 const userSchema = new Schema({
-  user_id:{
+  name:{
     type: String,
     required: true
   },
-  name: {
+  userName: {
     type: String,
-    required: true,
-    minlength: [5, 'Username must be 5 characters or more.'],
+    required: true
   },
   password: {
     type: String,
-    required: true,
-    minlength: [8, 'Password must be 8 characters or more.'],
+    required: true
   },
 });
 

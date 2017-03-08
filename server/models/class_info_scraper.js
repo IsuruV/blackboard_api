@@ -96,7 +96,8 @@ import Nightmare from 'nightmare';
         } else {
             console.log(this.rosterLinks);
             console.log("End");
-            this.nightmare.endInstance();
+            // this.nightmare.endInstance();
+            this.nightmare.end();
             
         }
      })
