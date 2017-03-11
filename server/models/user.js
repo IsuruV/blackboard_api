@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import Class from './class';
 
 const { Schema } = mongoose;
 
@@ -17,6 +18,7 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
+  classes: [{ type: Schema.Types.ObjectId, ref: 'Class' }]
 });
 
 // Write some encrption for Password

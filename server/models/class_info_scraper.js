@@ -15,7 +15,7 @@ import Nightmare from 'nightmare';
     this.getClasses();
     
     var x = new Promise((resolve, reject)=>{
-      //hacksh but it works, will wait 20 secs, hopefully enough time to be done scraping.
+      //hackish but it works, will wait 20 secs, hopefully enough time to be done scraping.
     setTimeout(()=>{
         resolve(this.rosterLinks);
     }, 20000);
@@ -59,7 +59,6 @@ import Nightmare from 'nightmare';
       });
   });
   }
-// `https://bbhosted.cuny.edu/webapps/blackboard/execute/searchRoster?courseId=${this.rosterLinks[i].id}&course_id=${this.rosterLinks[i].id}&action=search&userInfoSearchKeyString=FIRSTNAME&userInfoSearchOperatorString=Contains&userInfoSearchText=`
   runNext(i){
       this.nightmare
       .goto(`https://bbhosted.cuny.edu/webapps/blackboard/execute/displayEmail?navItem=email_select_students&course_id=${this.rosterLinks[i].class_id}`)
@@ -68,15 +67,8 @@ import Nightmare from 'nightmare';
       .evaluate(
         ()=>{
           var students = [];
-          // var studentRoster = document.querySelectorAll('#listContainer_databody tr');
           var studentRoster = document.querySelectorAll('#USERS_AVAIL  option');
           console.log(studentRoster);
-          // for(var z=0; z<studentRoster.length;z++){
-          //   var firstName = studentRoster[z].children[1].innerHTML.replace(/\s/g, '');
-          //   var lastname = studentRoster[z].children[0].children[0].innerHTML.replace(/\<(.*)\>/,"").replace(/\s/g, '');
-          //   var fullName = firstName + " " + lastname;
-          //   students.push(fullName);
-          // }
           for(var z=0; z<studentRoster.length; z++){
             var name = studentRoster[z].innerHTML;
             students.push(name);
@@ -114,4 +106,5 @@ export default ClassInfoScraper;
 // "start": "nodemon bin/dev"
 
 
-// DEBUG=nightmare* xvfb-run node example.js
+// DEBUG=nightmare* xvfb-run node bin/dev
+// ./mongod
