@@ -14,6 +14,9 @@ const classSchema = new Schema({
       type: String,
       required: true
   },
+  roster: [],
   students : [{ type: Schema.Types.ObjectId, ref: 'User' }]
 });
 
+const Class = mongoose.model('Class', classSchema);
+export default Class;

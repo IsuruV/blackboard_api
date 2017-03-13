@@ -7,10 +7,17 @@ import bodyParser from 'body-parser';
 
 import routes from './routes';
 
-mongoose.connect(process.env.IP, () => {
-  console.log('Contected to mongodb...');
+/*
+var mongoLab = 'mongodb://userman:lemons@ds145178.mlab.com:45178/blackboardmessenger'
+mongoose.connect(mongoLab, () => {
+  console.log('Connected to MongoDB...');
 });
-
+*/
+///*
+mongoose.connect(process.env.IP, () => {
+  console.log('Connected to MongoDB...');
+});
+//*/
 const app = express();
 
 // Middleware

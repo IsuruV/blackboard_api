@@ -11,6 +11,11 @@ import Nightmare from 'nightmare';
 
   }
   
+   static newScraper(username, password){
+    var scraper = new ClassInfoScraper(username, password);
+    return scraper.returnRoster();
+  }
+  
   returnRoster(){
     this.getClasses();
     
